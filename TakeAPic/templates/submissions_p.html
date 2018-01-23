@@ -1,0 +1,101 @@
+{% extends "layout.html" %}
+
+
+{% block head %}
+ <title> TakeAPic </title>
+{% endblock %}
+
+{% block body %}
+
+ <div class="container-fluid bg-1 text-center">
+
+   <!-- HEADER -->
+   <h1>{{ hap }}</h1>
+
+   <!-- SPACER -->
+   <div class="col-xs-12" style="height:50px;"></div>
+
+   <!-- IMAGES -->
+
+   <div class="row">
+
+     <div class="col-lg-1"></div>
+
+     <div class="col-lg-5">
+       <img src="{{ rawimgfilepath }}" class="img-responsive" width="100%" alt="Raw img">
+     </div>
+
+     <div class="col-lg-5">
+       <img src="{{ procimgfilepath }}" class="img-responsive" width="100%" alt="Proc img">
+     </div>
+
+     <div class="col-lg-1"></div>
+   </div>
+
+
+   <!-- PRICING ROW -->
+   <div class="row">
+     <div class="col-lg-1"></div>
+       <div class="col-lg-10">
+         <h1 class="bd-title text-success" id="total-label">Your shelf is worth at least $0.00</h1>
+       </div>
+     <div class="col-lg-1"></div>
+   </div>
+
+
+
+
+   <!-- TABLE ROW -->
+   <div class="row">
+     <div class="col-lg-1"></div>
+     <div class="col-lg-10">
+       <table class="table table-hover" id="cost_table">
+         <thead>
+           <tr>
+             <th>Book</th>
+             <th>Price ($)</th>
+             <th>Include?</th>
+           </tr>
+         </thead>
+         <tbody>
+           {% for book in books %}
+
+           <!--
+             {% if book.flag == False %}
+             {{print("1")}}
+               <tr class="table-success">
+             {% endif %}
+
+             {% if book.flag == True %}
+             {{print("2")}}
+               <tr class="table-warning">
+             {% endif %}-->
+
+             <tr class="table-warning">
+             <td>
+               <p class="text-left font-weight-bold">{{ book.book_info['title'] }}</p>
+               <p class="text-left font-italic">{{ book.book_info['authors'] }}</p>
+             </td>
+             <td name="price_row">{{ book.formatted_price }}</td>
+             <td name="checkbox">
+               <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id={{ book.book_info['id'] }} name="sell-checkbox" checked="checked" width="30px" height="30px">
+               </div>
+             </td>
+           </tr>
+           {% endfor %}
+         </tbody>
+       </table>
+     </div>
+
+     <div class="col-lg-1"></div>
+
+   </div>
+
+
+   <script type="text/javascript" src="/static/js/table.js"></script>
+
+
+
+
+{% endblock %}

@@ -1,0 +1,10 @@
+TakeAPic/GoogleFace.py
+TakeAPic/GoogleFace_local.py
+TakeAPic/TakeAPic.py
+TakeAPic/__init__.py
+TakeAPic/scrape.py
+TakeAPic.egg-info/PKG-INFO
+TakeAPic.egg-info/SOURCES.txt
+TakeAPic.egg-info/dependency_links.txt
+TakeAPic.egg-info/requires.txt
+TakeAPic.egg-info/top_level.txt

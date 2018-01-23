@@ -1,0 +1,11 @@
+google cloud commands:
+anaconda3/bin/jupyter-notebook --ip=0.0.0.0 --port=8000
+
+to ssh into the cloud computer
+gcloud compute ssh Selin.tosun@instance-1
+
+installing
+sudo /home/Selin.tosun/anaconda3/bin/pip install google
+
+gcloud compute scp --recurse /home/Desktop/jaffedbase/* Selin.tosun@intance-1:~
+gcloud compute scp ~/Desktop/jaffedbase Selin.tosun@intance-1:~/ --zone us-west1-a
