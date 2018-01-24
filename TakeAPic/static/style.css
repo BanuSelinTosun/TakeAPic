@@ -9,7 +9,7 @@ table.dataframe, .dataframe th, .dataframe td {
   border-bottom: 1px solid #C8C8C8;
   border-collapse: collapse;
   text-align:left;
-  padding: 10px;
+  padding: 5px;
   margin-bottom: 40px;
   font-size: 0.9em;
 }

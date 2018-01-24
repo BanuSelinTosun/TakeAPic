@@ -6,33 +6,16 @@
 
 {% block body %}
 
- <div class="container-fluid bg-1 text-center">
+ <div class="container-fluid text-center" style ="height:auto; margin:0 auto;"}>
 
-     <img src='/static/img/uppershelflogo.png' class='img-fluid' width='100%' alt='background'>
+     <img src='/static/img/1920.jpg' class='img-fluid' width='50%' alt='background'>
+     <h1> Welcome to TakeAPic </h1>
+        <h2> Please upload your images directory </h2>
 
-       <div class="container" style="background-image:/static/img/empty-shelf.png" width='100%'>
-
-         <!--<div class="row" style="background:transparent url('static/img/empty-shelf.png') no-repeat center center /cover" height="600px">-->
-           <div class="row" style="background:transparent url('static/img/empty-shelf.png')" height="600px">
-           <div class="col-xl-5 col-lg-5"></div>
-
-           <div class="col-xl-2 col-lg-2 col-sm-12">
-
-             <form action="/submissions" method='POST' enctype = "multipart/form-data">
-               <!-- <input type = "file" class="form-control" name = "file" /> -->
+             <form action="/submissions" method='POST' enctype = "multipart/form-data" style="height:500px;width:250px;align:center;margin:0 auto;">
                <input type="file" class="form-control" name="file" webkitdirectory mozdirectory />
-               <button class="btn btn-primary glyphicon glyphicon-book" type="submit">  Submit</button>
+               <button class="btn btn-primary glyphicon glyphicon-book" type="submit" style="height:30px;width:100px;align:center;margin:0 auto;">  Submit</button>
              </form>
-
-           </div>
-
-           <div class="col-xl-5 col-lg-5"></div>
-
-         </div>
-
-       </div>
-
-     <img src='/static/img/lowershelf.png' class='img-fluid' width='100%' alt='background'>
 
  </div>
 
