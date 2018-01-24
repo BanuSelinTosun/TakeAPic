@@ -57,7 +57,16 @@ def feed(inpt):
     SUR_lst = []
     name_lst = []
 
-    if check_dir(inpt):
+    if type(inpt) == list:
+        for img in inpt:
+            HAP_img, SAD_img, ANG_img, SUR_img = analyze(img)
+            HAP_lst.append(HAP_img)
+            SAD_lst.append(SAD_img)
+            ANG_lst.append(ANG_img)
+            SUR_lst.append(SUR_img)
+            name_lst.append("-".join((img.split('/')[-1]).split('.')[:2])+('.jpg'))
+
+    elif check_dir(inpt):
         file_names = []
         for the_file in os.listdir(inpt):
             if the_file.split('.')[-1] == 'jpg':
@@ -69,7 +78,7 @@ def feed(inpt):
             SAD_lst.append(SAD_img)
             ANG_lst.append(ANG_img)
             SUR_lst.append(SUR_img)
-            name_lst.append("-".join((img.split('/')[-1]).split('.')[:2])+('.jpeg'))
+            name_lst.append("-".join((img.split('/')[-1]).split('.')[:2])+('.jpg'))
 
     elif check_file(inpt):
         HAP_img, SAD_img, ANG_img, SUR_img = analyze(inpt)
@@ -77,19 +86,19 @@ def feed(inpt):
         SAD_lst.append(SAD_img)
         ANG_lst.append(ANG_img)
         SUR_lst.append(SUR_img)
-        name_lst.append("-".join((inpt.split('/')[-1]).split('.')[:2])+('.jpeg'))
+        name_lst.append("-".join((inpt.split('/')[-1]).split('.')[:2])+('.jpg'))
 
     elif (check_file(inpt) == False) & (check_dir(inpt) == False):
         print "The images need to be in '.jpg' format."
 
-    df = pd.DataFrame({'PIC': name_lst, 'HAP %': HAP_lst, 'SAD %': SAD_lst, 'ANG %': ANG_lst, 'SUR %':SUR_lst})
+    df1 = pd.DataFrame({'PIC': name_lst, 'HAP %': HAP_lst, 'SAD %': SAD_lst, 'ANG %': ANG_lst, 'SUR %':SUR_lst})
+    df = df1[['PIC', 'HAP %', 'SAD %', 'ANG %', 'SUR %']]
+    return df.round(2)
 
-    return df
-
-def main():
+def main(inpt):
     df = feed(inpt)
     print df.head(len(df))
 
 if __name__ == "__main__":
     inpt = raw_input("Please load the path of the image or the path of the directory of images: ")
-    main()
+    main(inpt)

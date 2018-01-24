@@ -1,0 +1,12 @@
+<!doctype html>
+<title>Sementic Analysis</title>
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+<div class=page>
+<script src="../static/jquery-3.2.1.min.js"></script>
+<script src="../static/sorttable.js"></script>
+<script src="../static/app.js"></script>
+  <h1>Semantic Analysis</h1>
+  {% for table in tables %}
+    {{ table|safe }}
+  {% endfor %}
+</div>

@@ -2,6 +2,7 @@ README.md
 TakeAPic/GoogleFace.py
 TakeAPic/GoogleFace_local.py
 TakeAPic/TakeAPic.py
+TakeAPic/TakeAPic_local.py
 TakeAPic/__init__.py
 TakeAPic.egg-info/PKG-INFO
 TakeAPic.egg-info/SOURCES.txt

@@ -1,0 +1,57 @@
+<!-- {% extends "layout.html" %}
+
+{% block head %}
+<title> TakeAPic </title>
+{% endblock %}
+
+{% block body %} -->
+<!DOCTYPE html>
+<html>
+<!-- <head>
+   <title>Index</title>
+</head> -->
+<body>
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+<div class=page>
+<center>
+
+<h2>Emotions</h2>
+{% for table in tables %}
+    <h2>{{titles[loop.index]}}</h2>
+    {{ table|safe }}
+  {% endfor %}
+<!-- <table id="zchart" class="sortable"> -->
+
+    <!-- <script src="static/jquery-3.2.1.min.js"></script>
+    <script src="static/sorttable.js"></script>
+    <script src="static/app.js"></script>
+    <style type="text/css">
+    table, td, th {border: 1px solid black; border-collapse: collapse; background: rgba(25,25,25,0.6)}
+    th {font-family: Arial; padding: 5px; padding-left: 20px; color: white;}
+    td {font-family: Arial; padding: 5px; padding-left: 20px; color: white;}
+    td.num {text-align:right}
+    </style> -->
+
+    <!-- <table class=“table table-hover”>
+       <tr><th>Emotions</th></tr>
+       {% for row in dataframe %}
+         <tr>
+           <td>{{ row["PIC"] }}
+                </td>
+         </tr>
+       {% endfor %}
+       </table> -->
+       <!-- {% extends "base.html" %}
+       {% block content %}
+       <h1>{{name}}</h1>
+       {{ dataframe.to_html(classes="table table-striped") | safe}}
+       {% endblock %} -->
+
+
+<!-- </table> -->
+</center>
+</div>
+</body>
+</html>
+
+<!-- {% endblock %} -->
