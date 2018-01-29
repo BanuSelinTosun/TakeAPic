@@ -1,8 +1,13 @@
 *.pyc
 *.ipynb_checkpoints
+<<<<<<< HEAD
 *.jpg
 *.png
 *.jpeg
+=======
+*.ipynb
+*.csv
+>>>>>>> c58593ceaaa84e28eb8229f7ff815fc3c5e64511
 
 DS_Store
 
