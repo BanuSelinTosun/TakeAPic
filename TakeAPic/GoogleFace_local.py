@@ -65,7 +65,7 @@ def feed(inpt):
                 SAD_lst.append(SAD_img)
                 ANG_lst.append(ANG_img)
                 SUR_lst.append(SUR_img)
-                name_lst.append("-".join((img.split('/')[-1]).split('.')[:2])+('.jpg'))
+                name_lst.append("-".join((img.split('/')[-1]).split('.')[:2]))
             except:
                 continue
 
