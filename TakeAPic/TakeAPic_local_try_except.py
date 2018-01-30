@@ -2,7 +2,7 @@
 import flask
 import os
 from werkzeug.utils import secure_filename    # Needed for image upload
-import GoogleFace_local
+import GoogleFace_local_try_except
 import re
 import pandas as pd
 from StringIO import StringIO
@@ -37,7 +37,7 @@ def submissions():
         file_names.append(str(file.filename))
 
     directory_path = [TakeAPic_BASE_PATH + '/' + file_name for file_name in file_names]
-    df = GoogleFace_local.feed(directory_path)
+    df = GoogleFace_local_try_except.feed(directory_path)
     df.sort_values(['HAP %', 'SAD %'], inplace=True, ascending=[False, True], na_position='last')
 
     return flask.render_template('submissions_local.html', name="Analysis", tables = [df.head(len(df)).to_html()])
