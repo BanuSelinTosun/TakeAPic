@@ -1,9 +1,14 @@
 README.md
 TakeAPic/GoogleFace.py
 TakeAPic/GoogleFace_local.py
+TakeAPic/GoogleFace_local_try_except.py
 TakeAPic/TakeAPic.py
 TakeAPic/TakeAPic_local.py
 TakeAPic/TakeAPic_local_alt.py
+<<<<<<< HEAD
+=======
+TakeAPic/TakeAPic_local_try_except.py
+>>>>>>> 00c51db1b5be7b8bd1d751f408d97523c8aa0c14
 TakeAPic/__init__.py
 TakeAPic.egg-info/PKG-INFO
 TakeAPic.egg-info/SOURCES.txt

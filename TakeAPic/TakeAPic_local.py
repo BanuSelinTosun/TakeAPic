@@ -7,6 +7,8 @@ import re
 import pandas as pd
 from StringIO import StringIO
 import base64
+import matplotlib.image as mpimg
+import matplotlib.pyplot as plt
 # Flask location
 
 # Base path for project
@@ -35,8 +37,12 @@ def submissions():
     file_names = []
     for file in uploaded_files.getlist('file'):
         file_names.append(str(file.filename))
+        file.save('./static/uploads/' + str(file.filename).split('/')[-1])
 
     directory_path = [TakeAPic_BASE_PATH + '/' + file_name for file_name in file_names]
-    df = GoogleFace_local.feed(directory_path)
+    df1 = GoogleFace_local.feed(directory_path)
+    df = df1[['PIC','HAP %', 'SAD %', 'ANG %', 'SUR %']]
 
-    return flask.render_template('submissions_local.html', name="Analysis", tables = [df.head(len(df)).to_html()])
+    img_paths, img_names = GoogleFace_local.top_three(df1)
+
+    return flask.render_template('submissions_local.html', img_paths = img_paths, name="Analysis", tables = [df.head(len(df)).to_html()])

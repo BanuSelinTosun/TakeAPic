@@ -2,9 +2,18 @@
 <title>Sementic Analysis</title>
 <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
 <div class=page>
-  <h1>Semantic Analysis</h1>
+  <h1 align="center">Semantic Analysis</h1>
+  <table style="margin: 0px auto;"></table>
   {% for table in tables %}
     <script src="../static/sorttable.js"></script>
-    {{ table|safe }}
+    {{ table |safe }}
   {% endfor %}
+  <div class=page class="container-fluid text-center" style ="height:auto; margin:0 auto;">
+      <center>
+      <h1 align="center"> Top Three Images </h1>
+        {% for img_path in img_paths %}
+            <img src="{{url_for('static', filename=img_path)}}" width=200 hover=box-shadow: 0 0 5px 5px rgba(25, 25, 25, 0.5) vspace="50" padding="100px 0px 0px 0px"  class="border"/>
+        {% endfor %}
+    </center>
+  </div>
 </div>
