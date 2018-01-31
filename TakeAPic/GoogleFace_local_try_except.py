@@ -15,6 +15,10 @@ import pandas as pd
 from google.cloud import vision
 from google.cloud.vision import types
 
+#Display images
+import matplotlib.image as mpimg
+import matplotlib.pyplot as plt
+
 def detect_face(face_file, max_results=15):
     """Uses the Vision API to detect faces in the given file.
 
@@ -43,12 +47,6 @@ def analyze(img):
     SUR = float(obj[0].surprise_likelihood) - 1
     return HAP * 25 * confidence, SAD * 25 * confidence, ANG * 25 * confidence, SUR * 25 * confidence
 
-def check_dir(direct):
-    return os.path.isdir(direct)
-
-def check_file(direct):
-    return os.path.isfile(direct)
-
 def feed(inpt):
 
     HAP_lst = []
@@ -56,6 +54,7 @@ def feed(inpt):
     ANG_lst = []
     SUR_lst = []
     name_lst = []
+    path_lst = []
 
     if type(inpt) == list:
         for img in inpt:
@@ -65,13 +64,26 @@ def feed(inpt):
                 SAD_lst.append(SAD_img)
                 ANG_lst.append(ANG_img)
                 SUR_lst.append(SUR_img)
-                name_lst.append("-".join((img.split('/')[-1]).split('.')[:2])+('.jpg'))
+                name_lst.append(img.split('/')[-1])
+                path_lst.append('./uploads/' + (img.split('/')[-1]))
             except:
                 continue
 
-    df1 = pd.DataFrame({'PIC': name_lst, 'HAP %': HAP_lst, 'SAD %': SAD_lst, 'ANG %': ANG_lst, 'SUR %':SUR_lst})
-    df = df1[['PIC', 'HAP %', 'SAD %', 'ANG %', 'SUR %']]
+    df1 = pd.DataFrame({'PIC': name_lst, 'PATH': path_lst, 'HAP %': HAP_lst, 'SAD %': SAD_lst, 'ANG %': ANG_lst, 'SUR %':SUR_lst})
+    df = df1[['PIC', 'PATH','HAP %', 'SAD %', 'ANG %', 'SUR %']]
+    df.sort_values(['HAP %', 'SAD %'], inplace=True, ascending=[False, True], na_position='last')
     return df.round(1)
+
+def top_three(df):
+    top_three = df.head(3)
+
+    img_paths = []
+    img_names = []
+    for name, path in zip(top_three['PIC'], top_three['PATH']):
+        img_paths.append(path)
+        img_names.append(name)
+
+    return img_paths, img_names
 
 def main(inpt):
     df = feed(inpt)
