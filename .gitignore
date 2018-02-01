@@ -4,6 +4,9 @@
 *.csv
 *.txt
 
+*.png
+*.jpg
+*.jpeg
 
 DS_Store
 
