@@ -54,7 +54,6 @@ def feed(inpt):
     ANG_lst = []
     SUR_lst = []
     name_lst = []
-    path_lst = []
 
     if type(inpt) == list:
         for img in inpt:
@@ -65,12 +64,11 @@ def feed(inpt):
                 ANG_lst.append(ANG_img)
                 SUR_lst.append(SUR_img)
                 name_lst.append(img.split('/')[-1])
-                path_lst.append('./uploads/' + (img.split('/')[-1]))
             except:
                 continue
 
-    df1 = pd.DataFrame({'PIC': name_lst, 'PATH': path_lst, 'HAP %': HAP_lst, 'SAD %': SAD_lst, 'ANG %': ANG_lst, 'SUR %':SUR_lst})
-    df = df1[['PIC', 'PATH','HAP %', 'SAD %', 'ANG %', 'SUR %']]
+    df1 = pd.DataFrame({'PIC': name_lst, 'HAP %': HAP_lst, 'SAD %': SAD_lst, 'ANG %': ANG_lst, 'SUR %':SUR_lst})
+    df = df1[['PIC', 'HAP %', 'SAD %', 'ANG %', 'SUR %']]
     df.sort_values(['HAP %', 'SAD %'], inplace=True, ascending=[False, True], na_position='last')
     return df.round(1)
 
@@ -79,8 +77,8 @@ def top_three(df):
 
     img_paths = []
     img_names = []
-    for name, path in zip(top_three['PIC'], top_three['PATH']):
-        img_paths.append(path)
+    for name in top_three['PIC']:
+        img_paths.append('./uploads/' + str(name))
         img_names.append(name)
 
     return img_paths, img_names

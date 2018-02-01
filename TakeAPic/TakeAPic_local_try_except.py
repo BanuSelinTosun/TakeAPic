@@ -34,15 +34,14 @@ def index():
 def submissions():
     uploaded_files = flask.request.files
 
-    file_names = []
+    file_paths = []
     for file in uploaded_files.getlist('file'):
-        file_names.append(str(file.filename))
         file.save('./static/uploads/' + str(file.filename).split('/')[-1])
+        file_paths.append('./static/uploads/' + str(file.filename).split('/')[-1])
 
-    directory_path = [TakeAPic_BASE_PATH + '/' + file_name for file_name in file_names]
-    df1 = GoogleFace_local_try_except.feed(directory_path)
-    df = df1[['PIC','HAP %', 'SAD %', 'ANG %', 'SUR %']]
+    directory_path = [TakeAPic_BASE_PATH + '/' + file_path for file_path in file_paths]
+    df = GoogleFace_local_try_except.feed(directory_path)
 
-    img_paths, img_names = GoogleFace_local_try_except.top_three(df1)
+    img_paths, img_names = GoogleFace_local_try_except.top_three(df)
 
     return flask.render_template('submissions_local.html', img_paths = img_paths, name="Analysis", tables = [df.head(len(df)).to_html()])
