@@ -98,6 +98,17 @@ def top_three(df):
 
     return img_paths, img_names
 
+def top_three_local(df):
+    top_three = df.head(3)
+
+    img_paths = []
+    img_names = []
+    for name in top_three['PIC']:
+        img_paths.append('./mini_jpg/' + str(name))
+        img_names.append(name)
+
+    return img_paths, img_names
+
 def main(inpt):
     df = feed(inpt)
     print df.head(len(df))

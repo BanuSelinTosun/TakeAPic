@@ -40,7 +40,8 @@ def submissions():
             if the_file.split('.')[-1] == 'jpg':
                 file_paths.append(str(the_file))
         directory_path = ['./static/mini_jpg/' + file_path for file_path in file_paths]
-
+        df = GoogleFace_local.feed(directory_path)
+        img_paths, img_names = GoogleFace_local.top_three_local(df)
     else:
         file_paths = []
         for file in uploaded_files.getlist('file'):
@@ -49,8 +50,8 @@ def submissions():
 
         directory_path = [TakeAPic_BASE_PATH + '/' + file_path for file_path in file_paths]
 
-    df = GoogleFace_local.feed(directory_path)
+        df = GoogleFace_local.feed(directory_path)
 
-    img_paths, img_names = GoogleFace_local.top_three(df)
+        img_paths, img_names = GoogleFace_local.top_three(df)
 
     return flask.render_template('submissions_local.html', img_paths = img_paths, name="Analysis", tables = [df.head(len(df)).to_html()])
