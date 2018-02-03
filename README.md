@@ -1,5 +1,5 @@
 # TakeAPic : A Tool to improve your social media experience
-TakeAPic is Data Science product that analyzes the 6 fundemental facial expressions + neutral expression. 
+TakeAPic is Data Science project focusing on the analysis of 6 fundemental facial expressions + neutral expression, a multi-classification using Convolutional Neural Networks. 
 
 ## Web Application: http://takeapic.online/
 
