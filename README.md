@@ -17,6 +17,8 @@ Slides for the project:
 Social media like Instagram and Twitter are platforms for both expressing individuality, but also capitalizing on personality. 
 This graph shows the *price of posting* to a channel with millions of Followers on four different social media platforms. It can cost almost $50k to promote a post in an Twitter feed with 5M followers, even more on Instagram or Facebook.
 
+<img alt="InstagramInfluencers" src="./TakeAPic/static/img/InstagramInfluencers.png" height="400" width="400" />
+
 The common denominator amongst many successful Instagram influencers is how they convey themselves in photos, where
 Psychological studies show that a person’s approachability or collectibility is higher when they appear happier.
 How do we, as humans, decide if a person is happy? We see the crow’s feet, pushed up cheeks, muscle movement orbiting the eye, and shape of the mouth
