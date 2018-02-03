@@ -39,7 +39,7 @@ def submissions():
         for the_file in os.listdir('.static/mini_jpg'):
             if the_file.split('.')[-1] == 'jpg':
                 file_paths.append(str(the_file))
-        directory_path = ['.static/mini_jpg/' + file_path for file_path in file_paths]
+        directory_path = ['./static/mini_jpg/' + file_path for file_path in file_paths]
 
     else:
         file_paths = []
