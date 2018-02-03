@@ -42,7 +42,7 @@ Just briefly on how CNNs work:
 You take images, pass them through convolutions of each layer which generates features, these features are fed to other layers of convolutions, then at the end you have high order of representation of images
 Finally these learned features are fed into a sigmoid function to generate classifications...
 
-<img alt="CNN" src="./TakeAPic/static/img/CNN.png" height="300" width="350" />
+<img alt="CNN" src="./TakeAPic/static/img/CNN.png" height="300" width="700" />
 
 By using a in house CNN with 11 hidden layers + sigmoid outlayer, I achieved approximately 99 % accuracy. The confusion matrix is shared below indicated the misidentified classes as fear vs sadness, and anger vs surprise. 
 
