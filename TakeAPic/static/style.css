@@ -9,7 +9,7 @@ table.dataframe, .dataframe th, .dataframe td {
   border-bottom: 1px solid #C8C8C8;
   border-collapse: collapse;
   border-style: hidden;
-  text-align:center;
+  text-align: center;
   padding: 10px;
   margin-bottom: 40px;
   font-size: 0.9em;
@@ -17,6 +17,7 @@ table.dataframe, .dataframe th, .dataframe td {
   margin-right: auto;
 }
 
+td:hover            { background-color: #858585;}
 tr:hover            { background-color: #999999;}
 
 img {

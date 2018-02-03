@@ -47,6 +47,21 @@ def analyze(img):
     SUR = float(obj[0].surprise_likelihood) - 1
     return HAP * 25 * confidence, SAD * 25 * confidence, ANG * 25 * confidence, SUR * 25 * confidence
 
+def color_negative_red(val):
+    """
+    Takes a scalar and returns a string with
+    the css property `'color: red'` for negative
+    strings, black otherwise.
+    """
+    color = 'red' if val < 0.75 else 'black'
+    return 'color: %s' % color
+
+def font_weight_bold(data):
+    attr = 'font-weight: bold'
+    if data.ndim == 1:  # Series from .apply(axis=0) or axis=1
+        #is_max = data == data.max()
+        return [attr for v in data]
+
 def feed(inpt):
 
     HAP_lst = []

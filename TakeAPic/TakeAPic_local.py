@@ -34,12 +34,21 @@ def index():
 def submissions():
     uploaded_files = flask.request.files
 
-    file_paths = []
-    for file in uploaded_files.getlist('file'):
-        file.save('./static/uploads/' + str(file.filename).split('/')[-1])
-        file_paths.append('./static/uploads/' + str(file.filename).split('/')[-1])
+    if len(uploaded_files) == 0:
+        file_paths = []
+        for the_file in os.listdir('./mini_jpg'):
+            if the_file.split('.')[-1] == 'jpg':
+                file_paths.append(str(the_file))
+        directory_path = ['./mini_jpg/' + file_path for file_path in file_paths]
 
-    directory_path = [TakeAPic_BASE_PATH + '/' + file_path for file_path in file_paths]
+    else:
+        file_paths = []
+        for file in uploaded_files.getlist('file'):
+            file.save('./static/uploads/' + str(file.filename).split('/')[-1])
+            file_paths.append('./static/uploads/' + str(file.filename).split('/')[-1])
+
+        directory_path = [TakeAPic_BASE_PATH + '/' + file_path for file_path in file_paths]
+
     df = GoogleFace_local.feed(directory_path)
 
     img_paths, img_names = GoogleFace_local.top_three(df)
