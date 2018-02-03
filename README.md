@@ -20,5 +20,5 @@ Slides for the project presentation:
 <a href="https://docs.google.com/presentation/d/e/2PACX-1vSYFRupRBmiBZh3q1zJs5VcbirzJ66oHGLc7fG9kCgjYGJF6SGTEoOlktySnfqu0rnE-rO1yz1elA_2/pub?start=true&loop=false&delayms=15000"> Presentation </a>
 
 On site view:
-{google_docs}https://docs.google.com/presentation/d/e/2PACX-1vSYFRupRBmiBZh3q1zJs5VcbirzJ66oHGLc7fG9kCgjYGJF6SGTEoOlktySnfqu0rnE-rO1yz1elA_2/pub?start=true&loop=false&delayms=15000{/google_docs}
+{google_docs} "https://docs.google.com/presentation/d/e/2PACX-1vSYFRupRBmiBZh3q1zJs5VcbirzJ66oHGLc7fG9kCgjYGJF6SGTEoOlktySnfqu0rnE-rO1yz1elA_2/pub?start=true&loop=false&delayms=15000" {/google_docs}
 
