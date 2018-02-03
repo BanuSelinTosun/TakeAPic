@@ -22,6 +22,4 @@ Slides for the project presentation:
 App video:
 <img alt="App_Video" src="./TakeAPic/static/img/takeapic01302018 (1).gif" height="500" width="1000" />
 
-On site view:
-{google_docs} "https://docs.google.com/presentation/d/e/2PACX-1vSYFRupRBmiBZh3q1zJs5VcbirzJ66oHGLc7fG9kCgjYGJF6SGTEoOlktySnfqu0rnE-rO1yz1elA_2/pub?start=true&loop=false&delayms=15000" {/google_docs}
 
