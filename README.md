@@ -23,7 +23,8 @@ The common denominator amongst many successful Instagram influencers is how they
 Psychological studies show that a person’s approachability or collectibility is higher when they appear happier.
 How do we, as humans, decide if a person is happy? We see the crow’s feet, pushed up cheeks, muscle movement orbiting the eye, and shape of the mouth
 
-Imagine a dating website and you want to improve your users pictures. TakeAPic can detect a grin being different than a smile, maybe the user can upload a happier picture. Looking at the happiness scores in the Tinder in Seattle, median score is 75% meaning and there are a lot of un-happy photos. Perhaps we have the ability to change them. 
+Imagine a dating website and you want to improve your users pictures. TakeAPic can detect a grin being different than a smile, maybe the user can upload a happier picture. Looking at the happiness scores in the Tinder in Seattle, median score is 75% meaning and there are a lot of un-happy photos. Perhaps we have the ability to change them.
+<img alt="App_Video" src="./TakeAPic/static/img/UseCase.png" height="500" width="1000" />
 
 For those unfamiliar with Tinder, you swipe picture left or right, if there is a match then people are connected. Since these pictures ultimately decide your match, you might want the ability to better convey the emotion they desire. Now with TakeAPic, dating apps like Tinder would be able to offer this new product.
 
