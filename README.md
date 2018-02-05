@@ -13,7 +13,7 @@ Here is a quick video of how the app works.
 ## Project Presentation:
 Slides for the project:
 <br>
-<a href="https://docs.google.com/presentation/d/e/2PACX-1vSYFRupRBmiBZh3q1zJs5VcbirzJ66oHGLc7fG9kCgjYGJF6SGTEoOlktySnfqu0rnE-rO1yz1elA_2/pub?start=true&loop=false&delayms=15000"> Presentation </a>
+<a href="https://docs.google.com/presentation/d/e/2PACX-1vSYFRupRBmiBZh3q1zJs5VcbirzJ66oHGLc7fG9kCgjYGJF6SGTEoOlktySnfqu0rnE-rO1yz1elA_2/pub?start=true&loop=false&delayms=15000"> Presentation Slides</a>
 <br>
 <a href="https://youtu.be/qOnjoAFm0no"> Presentation Video </a>
 
