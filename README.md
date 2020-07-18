@@ -50,7 +50,7 @@ Finally these learned features are fed into a sigmoid function to generate class
 
 <img alt="CNN" src="./TakeAPic/static/img/CNN.png" height="300" width="700" />
 
-By using a in house CNN with 11 hidden layers + sigmoid outlayer, I achieved approximately 99 % accuracy. The confusion matrix is shared below indicated the misidentified classes as fear vs sadness, and anger vs surprise. 
+By using a in house CNN with 11 hidden layers + softmax outlayer, I achieved approximately 99 % accuracy. The confusion matrix is shared below indicated the misidentified classes as fear vs sadness, and anger vs surprise. 
 
 <img alt="MultiClassification_ConfusionMatrix_for_FERG_DB_256" src="./TakeAPic/MultiClassification_ConfusionMatrix_for_FERG_DB_256.png" height="300" width="350" />
 
